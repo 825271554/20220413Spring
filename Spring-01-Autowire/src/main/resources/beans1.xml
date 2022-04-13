@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dog" class="com.hu.pojo.Dog"/>
+    <bean id="cat" class="com.hu.pojo.Cat"/>
+   <!-- <bean id="cat2" class="com.hu.pojo.Cat"/> 错误-->
+    <bean id="people" class="com.hu.pojo.People" autowire="byType"><!--自动装配-->
+
+<!--使用autowire byType首先需要保证：同一类型的对象，在spring容器中唯一。如果不唯一，会报不唯一的异常。-->
+        <property name="name" value="qinjiang7"/>
+    </bean>
+</beans>

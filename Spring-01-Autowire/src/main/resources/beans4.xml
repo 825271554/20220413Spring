@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/context/spring-aop.xsd">
+
+
+    <context:annotation-config/>
+    <!--使用resource注解  id名字不一样都能用-->
+    <!--@Resource如有指定的name属性，先按该属性进行byName方式查找装配；
+其次再进行默认的byName方式进行装配；
+如果以上都不成功，则按byType的方式自动装配。
+都不成功，则报异常。-->
+    <bean id="dog22" class="com.hu.pojo.Dog"/>
+    <bean id="cat2" class="com.hu.pojo.Cat"/>
+    <bean id="cat1" class="com.hu.pojo.Cat"/><!--像这样有相同类型的如果使用@Resource 必须指定name属性-->
+    <bean id="people" class="com.hu.pojo.People"/>
+
+</beans>

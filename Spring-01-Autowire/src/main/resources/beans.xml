@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dog" class="com.hu.pojo.Dog"/>
+    <bean id="cat" class="com.hu.pojo.Cat"/>
+    <bean id="people" class="com.hu.pojo.People" autowire="byName"><!--自动装配-->
+
+        <!--
+        byName:会自动在容器上下文查找，和自己对象set方法后面的值对应的beanid-->
+
+        <!--将查找其类中所有的set方法名，例如setCat，获得将set去掉并且首字母小写的字符串，即cat。
+        去spring容器中寻找是否有此字符串名称id的对象。
+        如果有，就取出注入；如果没有，就报空指针异常。例如上面bean的id是cat66就会报错-->
+
+        <property name="name" value="qinjiang"/>
+    </bean>
+</beans>

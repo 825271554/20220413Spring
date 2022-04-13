@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/context/spring-aop.xsd">
+
+    <!--上述新增的在原基础末尾为beans的基础上改为context而已-->
+    <!--需要导入 spring-aop的包-->
+    <!--    开启属性注解支持！-->
+    <context:annotation-config/>
+
+    <bean id="dog" class="com.hu.pojo.Dog"/>
+    <bean id="cat" class="com.hu.pojo.Cat"/>
+    <bean id="people" class="com.hu.pojo.People"/>
+<!--@Autowired是按类型自动转配的，不支持id匹配。-->
+</beans>

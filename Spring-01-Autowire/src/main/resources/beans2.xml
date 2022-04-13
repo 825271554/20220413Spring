@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/context/spring-aop.xsd">
+ <!--   @Autowired是根据类型自动装配的，加上@Qualifier则可以根据byName的方式自动装配
+    @Qualifier不能单独使用。-->
+
+    <context:annotation-config/>
+    <bean id="dog1" class="com.hu.pojo.Dog"/>
+    <bean id="dog2" class="com.hu.pojo.Dog"/>
+    <bean id="cat1" class="com.hu.pojo.Cat"/>
+    <bean id="cat2" class="com.hu.pojo.Cat"/>
+    <bean id="people" class="com.hu.pojo.People"/>
+    <!--在其对应的class代表的类中 加@Qualifier(value = "cat2")-->
+</beans>
